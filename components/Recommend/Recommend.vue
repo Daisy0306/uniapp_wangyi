@@ -28,7 +28,7 @@
 	</view>
 	
 	<!-- 小图分类导航区域  kingKongList-->
-	<view class="imgNavWrapper">
+	<view class="imgNavWrapper" v-if="indexData.kingKongModule">
 		<view class="imgNavItem" v-for="imgNavItem in indexData.kingKongModule.kingKongList" :key="imgNavItem.text">
 			<image :src="imgNavItem.picUrl" mode=""></image>
 			<text>{{imgNavItem.text}}</text>
