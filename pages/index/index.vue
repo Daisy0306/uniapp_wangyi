@@ -10,16 +10,10 @@
 			<button type="default">七月</button>
 		</view>
 		<!-- 头部导航区域 -->
-		<scroll-view class="navBar" scroll-x>
-			<view class="navItem active">推荐</view>
-			<view class="navItem">居家生活</view>
-			<view class="navItem">服饰鞋包</view>
-			<view class="navItem">美食酒水</view>
-			<view class="navItem">个护清洁</view>
-			<view class="navItem">母婴亲子</view>
-			<view class="navItem">运动旅行</view>
-			<view class="navItem">数码家电</view>
-			<view class="navItem">全球特色</view>
+		<scroll-view class="navBar" scroll-x v-if="indexData.kingKongModule">
+			<view class="navItem active" 
+			v-for="item in indexData.kingKongModule.kingKongList" 
+			:key="item.L1Id">{{item.text}}</view>
 		</scroll-view>
 		<!-- 首页轮播图区域 -->
 		<swiper class="slideshow" 
@@ -90,21 +84,22 @@
 </template>
 
 <script>
-	import request from "../../untils/request.js";
+	import request from "../../utils/request.js";
 	import indexData from "../../utils/datas/index.json";
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				indexData:[]
 			}
 		},
 		async mounted(){
-			const result = await request("http://localhost:3002/getIndexData");
+			let result = await request("/getIndexData");
 			// 引入json数据，如果发请求拿不到数据，就可以用备用的
 			if(!result){
 				result = indexData;
 			}
-			console.log(result); // 测试是否拿到数据
+			//console.log(result); // 测试是否拿到数据
+			this.indexData = indexData;
 		}
 
 	}
