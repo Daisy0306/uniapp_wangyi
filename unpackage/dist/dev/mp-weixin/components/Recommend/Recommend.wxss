@@ -1,0 +1,57 @@
+.recommendContainer .bannerSwiper {
+  height: 350rpx;
+}
+.recommendContainer .bannerSwiper .bannerImg {
+  width: 100%;
+  height: 100%;
+}
+.recommendContainer .moreServices {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 8rpx 0;
+}
+.recommendContainer .moreServices .service {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+.recommendContainer .moreServices .service image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.recommendContainer .moreServices .service text {
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.recommendContainer .imgNavWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.recommendContainer .imgNavWrapper .imgNavItem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 0 20rpx;
+}
+.recommendContainer .imgNavWrapper .imgNavItem image {
+  width: 110rpx;
+  height: 110rpx;
+}
+.recommendContainer .imgNavWrapper .imgNavItem text {
+  font-size: 24rpx;
+}
+
