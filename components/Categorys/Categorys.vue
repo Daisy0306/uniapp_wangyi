@@ -1,27 +1,12 @@
 <template>
   <view class="floorWrapper">
   	<view class="floor">
-  		  <image class="titleImg" src="https://yanxuan.nosdn.127.net/14318a2168c8c0b6d8e2ed60dcbed570.jpg" mode=""></image>
+  		  <image class="titleImg" :src="categoryObj.titlePicUrl"></image>
   		  <scroll-view scroll-x class="goodsList">
-  		  	<view class="listItem">
-  				<image src="https://yanxuan-item.nosdn.127.net/ea324a88d74978c5a11fe99ece5734ae.png" mode=""></image>
-  				<text>随时随地喝热水 3秒即热便携式迷你开水机</text>
-  			</view>
-  			<view class="listItem">
-  				<image src="https://yanxuan-item.nosdn.127.net/ea324a88d74978c5a11fe99ece5734ae.png" mode=""></image>
-  				<text>随时随地喝热水 3秒即热便携式迷你开水机</text>
-  			</view>
-  			<view class="listItem"> 
-  				<image src="https://yanxuan-item.nosdn.127.net/ea324a88d74978c5a11fe99ece5734ae.png" mode=""></image>
-  				<text>随时随地喝热水 3秒即热便携式迷你开水机</text>
-  			</view>
-  			<view class="listItem">
-  				<image src="https://yanxuan-item.nosdn.127.net/ea324a88d74978c5a11fe99ece5734ae.png" mode=""></image>
-  				<text>随时随地喝热水 3秒即热便携式迷你开水机</text>
-  			</view>
-  			<view class="listItem">
-  				<image src="https://yanxuan-item.nosdn.127.net/ea324a88d74978c5a11fe99ece5734ae.png" mode=""></image>
-  				<text>随时随地喝热水 3秒即热便携式迷你开水机</text>
+  		  	<view class="listItem"  v-for="goodsItem in categoryObj.itemList"
+		  :key="goodsItem.name">
+  				<image :src="goodsItem.showPicUrl"></image>
+  				<text>{{goodsItem.name}}</text>
   			</view>
   		  </scroll-view>
   	</view>
@@ -31,6 +16,14 @@
 <script>
 export default {
   name: 'Categorys',
+  data(){
+	  return{
+		  
+	  }
+  },
+  props:{
+	  categoryObj:Object
+  }
 }
 </script>
 

@@ -35,7 +35,7 @@
 		</view>
 	</view>
 	
-	<Categorys />
+	<Categorys :categoryObj="CategoryObj" v-for="CategoryObj in indexData.categoryModule" :key="CategoryObj.titlePicUrl"/>
   </view>
 </template>
 

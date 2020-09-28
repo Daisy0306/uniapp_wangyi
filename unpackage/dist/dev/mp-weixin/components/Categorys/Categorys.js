@@ -131,24 +131,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
-  name: 'Categorys' };exports.default = _default;
+  name: 'Categorys',
+  data: function data() {
+    return {};
+
+
+  },
+  props: {
+    categoryObj: Object } };exports.default = _default;
 
 /***/ }),
 
