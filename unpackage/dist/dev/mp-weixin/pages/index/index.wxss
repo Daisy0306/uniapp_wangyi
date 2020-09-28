@@ -64,4 +64,7 @@
 .indexContainer .navBar .navItem.active {
   border-bottom: #f00 solid 2rpx;
 }
+.indexContainer .scrollContainer {
+  height: calc(100vh - 80rpx - 80rpx - 0px - 0px);
+}
 

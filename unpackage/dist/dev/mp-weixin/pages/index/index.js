@@ -163,22 +163,35 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 16);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var Recommend = function Recommend() {return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! ../../components/Recommend/Recommend.vue */ 33));};var _default =
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 16);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var Recommend = function Recommend() {return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! ../../components/Recommend/Recommend.vue */ 33));};var CateList = function CateList() {return Promise.all(/*! import() | components/cateList/cateList */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/cateList/cateList")]).then(__webpack_require__.bind(null, /*! ../../components/cateList/cateList.vue */ 51));};var _default =
+
 
 {
   data: function data() {
-    return {};
+    return {
+      activeIndex: -1 };
 
   },
   mounted: function mounted() {
     this.$store.dispatch('getIndexData');
   },
   components: {
-    Recommend: Recommend },
+    Recommend: Recommend,
+    CateList: CateList },
 
   computed: _objectSpread({},
   (0, _vuex.mapState)({
-    indexData: function indexData(state) {return state.home.indexData;} })) };exports.default = _default;
+    indexData: function indexData(state) {return state.home.indexData;} })),
+
+
+  methods: {
+    changeActiveIndex: function changeActiveIndex(index) {
+      this.activeIndex = index;
+    } } };exports.default = _default;
 
 /***/ }),
 

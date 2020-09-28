@@ -12,36 +12,48 @@
 		
 		<!-- 头部导航区域 -->
 		<scroll-view class="navBar" scroll-x v-if="indexData.kingKongModule">
-			<view class="navItem active">推荐</view>
-			<view class="navItem" 
-			v-for="item in indexData.kingKongModule.kingKongList" 
-			:key="item.L1Id">{{item.text}}</view>
+			<view class="navItem" :class="activeIndex===-1?'active':''"
+			@click="changeActiveIndex(-1)">推荐</view>
+			<view class="navItem" :class="activeIndex===index?'active':''"
+			v-for="(item,index) in indexData.kingKongModule.kingKongList" 
+			:key="item.L1Id"
+			@click="changeActiveIndex(index)">{{item.text}}</view>
 		</scroll-view>
 		
 		<!-- 首页底部区域 -->
-		<Recommend/>
-		
+		<scroll-view scroll-y="true" class="scrollContainer">
+			<Recommend v-if="activeIndex===-1"/>
+			<CateList v-else :activeIndex="activeIndex"/>
+		</scroll-view>		
 	</view>
 </template>
 
 <script>
 	import {mapState} from "vuex";
 	import Recommend from "../../components/Recommend/Recommend.vue"
+	import CateList from "../../components/cateList/cateList.vue";
 	export default {
 		data() {
 			return {
+				activeIndex:-1
 			}
 		},
 		mounted(){
 			this.$store.dispatch('getIndexData')
 		},
 		components:{
-			Recommend
+			Recommend,
+			CateList
 		},
 		computed:{
 			...mapState({
 				indexData:state => state.home.indexData
 			})
+		},
+		methods:{
+			changeActiveIndex(index){
+				this.activeIndex = index;
+			}
 		}
 
 	}
@@ -98,5 +110,6 @@
 				box-sizing border-box
 				&.active
 					border-bottom red solid 2upx
-											
+		.scrollContainer
+			height calc(100vh - 80upx - 80upx - var(--window-bottom) - var(--window-top))
 </style>
