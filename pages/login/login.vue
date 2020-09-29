@@ -3,7 +3,7 @@
 		<image class="logo" src="http://yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png" mode=""></image>
 		<p class='text'>网易自营，精品生活家居品牌</p>
 		<div class="loginMethods">
-			<button class="login wechatLogin">
+			<button class="login wechatLogin" open-type="getUserInfo" @getuserinfo="getUserInfo">
 				微信登录
 			</button>
 			<button class="login emailLogin">
@@ -17,11 +17,30 @@
 	export default {
 		data() {
 			return {
-				
+			
 			}
 		},
 		methods: {
-			
+			getUserInfo(res){
+				let {userInfo} = res.detail;
+				if(userInfo){
+					// 弹出授权成功提示窗口
+					uni.showToast({
+						title:"授权成功",
+						success:() => {
+							uni.reLaunch({
+								url:"/pages/personal/personal?userInfo="+JSON.stringify(userInfo)
+							})
+						}
+					})
+				}else{
+					// 授权失败提示窗口
+					uni.showToast({
+						title:"授权失败,请重新授权",
+						icon:"none"
+					})
+				}
+			}
 		}
 	}
 </script>

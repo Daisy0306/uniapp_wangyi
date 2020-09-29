@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<div class="header" @click="toLogin">
-			<image class="userImg" src="../../static/images/personal/personal.png" mode=""></image>
+			<image class="userImg" :src="userInfo.avatarUrl?userInfo.avatarUrl:'../../static/images/personal/personal.png'" mode=""></image>
 			<div class='userInfo'>
-				<p>未登录</p>
-				<p>点击登录账号</p>
+				<p>{{userInfo.nickName?userInfo.nickName:'未登录'}}</p>
+				<p>{{userInfo.nickName?"微信用户":"点击登录账号"}}</p>
 			</div>
 		</div>
 		
@@ -48,6 +48,7 @@
 	module.exports = {
 		data(){
 			return {
+				userInfo:{},
 				personalList: [
 					{
 						name: '我的订单',
@@ -93,7 +94,20 @@
 			}
 		},
 		mounted(){
+			// 当用户通过login页面路由跳转到该页面,获取路由参数中的userInfo,动态展示
+			let {userInfo} = this.$mp.query;
+			console.log(userInfo); //测试是否拿到数据
+			if(userInfo){
+				userInfo = JSON.parse(userInfo);
+				this.userInfo = userInfo;
+			}
 			
+			// 当用户已授权,二次进入该项目,自动获取授权信息
+			uni.getUserInfo({
+				success:(res) => {
+					this.userInfo = res.userInfo;
+				}
+			})
 		},
 		methods: {
 			toLogin(){

@@ -183,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 module.exports = {
   data: function data() {
     return {
+      userInfo: {},
       personalList: [
       {
         name: '我的订单',
@@ -227,7 +228,20 @@ module.exports = {
 
 
   },
-  mounted: function mounted() {
+  mounted: function mounted() {var _this = this;
+    // 当用户通过login页面路由跳转到该页面,获取路由参数中的userInfo,动态展示
+    var userInfo = this.$mp.query.userInfo;
+    console.log(userInfo); //测试是否拿到数据
+    if (userInfo) {
+      userInfo = JSON.parse(userInfo);
+      this.userInfo = userInfo;
+    }
+
+    // 当用户已授权,二次进入该项目,自动获取授权信息
+    uni.getUserInfo({
+      success: function success(res) {
+        _this.userInfo = res.userInfo;
+      } });
 
   },
   methods: {
