@@ -231,7 +231,7 @@ module.exports = {
   mounted: function mounted() {var _this = this;
     // 当用户通过login页面路由跳转到该页面,获取路由参数中的userInfo,动态展示
     var userInfo = this.$mp.query.userInfo;
-    console.log(userInfo); //测试是否拿到数据
+    console.log(userInfo); //测试是否拿到数据,首次为undefined
     if (userInfo) {
       userInfo = JSON.parse(userInfo);
       this.userInfo = userInfo;

@@ -22,7 +22,7 @@
 		},
 		methods: {
 			getUserInfo(res){
-				let {userInfo} = res.detail;
+				let {userInfo,rawData} = res.detail;
 				if(userInfo){
 					// 弹出授权成功提示窗口
 					uni.showToast({
@@ -33,6 +33,8 @@
 							})
 						}
 					})
+					// 将登录时候的用户信息存储到storage中
+					uni.setStorageSync("userInfo",rawData)
 				}else{
 					// 授权失败提示窗口
 					uni.showToast({

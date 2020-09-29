@@ -156,8 +156,8 @@ var _default =
 
   },
   methods: {
-    getUserInfo: function getUserInfo(res) {var
-      userInfo = res.detail.userInfo;
+    getUserInfo: function getUserInfo(res) {var _res$detail =
+      res.detail,userInfo = _res$detail.userInfo,rawData = _res$detail.rawData;
       if (userInfo) {
         // 弹出授权成功提示窗口
         uni.showToast({
@@ -168,6 +168,8 @@ var _default =
 
           } });
 
+        // 将登录时候的用户信息存储到storage中
+        uni.setStorageSync("userInfo", rawData);
       } else {
         // 授权失败提示窗口
         uni.showToast({
