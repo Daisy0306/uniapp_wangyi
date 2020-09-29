@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   Recommend: () =>
-    __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! @/components/Recommend/Recommend.vue */ 33))
+    __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! @/components/Recommend/Recommend.vue */ 53))
 }
 var render = function() {
   var _vm = this
@@ -167,7 +167,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 16);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var Recommend = function Recommend() {return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! ../../components/Recommend/Recommend.vue */ 33));};var CateList = function CateList() {return Promise.all(/*! import() | components/cateList/cateList */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/cateList/cateList")]).then(__webpack_require__.bind(null, /*! ../../components/cateList/cateList.vue */ 40));};var _default =
+var _vuex = __webpack_require__(/*! vuex */ 16);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var Recommend = function Recommend() {return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! ../../components/Recommend/Recommend.vue */ 53));};var CateList = function CateList() {return Promise.all(/*! import() | components/cateList/cateList */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/cateList/cateList")]).then(__webpack_require__.bind(null, /*! ../../components/cateList/cateList.vue */ 60));};var _default =
 
 
 {

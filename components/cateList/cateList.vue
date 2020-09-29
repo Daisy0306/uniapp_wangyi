@@ -1,5 +1,5 @@
 <template>
-	<div class='cateListContainer'>
+	<div class='cateListContainer' v-if="cateObj">
 		<swiper :indicator-dots="true" :autoplay="true" indicator-color='green' indicator-active-color='pink'>
 			<swiper-item v-for="(swiperItem, index) in cateObj.category.bannerUrlList" :key='index'>
 				<image :src="swiperItem" mode=""></image>
