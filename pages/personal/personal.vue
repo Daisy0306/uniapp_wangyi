@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="header">
+		<div class="header" @click="toLogin">
 			<image class="userImg" src="../../static/images/personal/personal.png" mode=""></image>
 			<div class='userInfo'>
 				<p>未登录</p>
@@ -96,7 +96,11 @@
 			
 		},
 		methods: {
-			
+			toLogin(){
+				uni.navigateTo({
+					url:'/pages/login/login'
+				})
+			}
 		}
 		
 	}

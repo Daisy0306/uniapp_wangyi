@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/personal/personal",
+		    "style" : {
+				"navigationBarTitleText": "个人中心"
+			}
+		}
+		,{
 		    "path" : "pages/category/category",
 		    "style" : {
 				"navigationBarTitleText": "分类"
@@ -19,9 +25,9 @@
 			}
         }
         ,{
-            "path" : "pages/personal/personal",
+            "path" : "pages/login/login",
             "style" : {
-				"navigationBarTitleText": "个人中心"
+				"navigationBarTitleText": "登录"
 			}
         }
     ],
