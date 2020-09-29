@@ -15,12 +15,12 @@
 					>{{category.name}}</view>
 				</scroll-view>
 			</view>
-			<view class="rightContainer">
+			<view class="rightContainer" v-if="categoryObj">
 				<scroll-view scroll-y="true" class="contentScroll">
 					<view class="scrollHeader">
 						<image class="headerImg" :src="categoryObj.imgUrl"></image>
 					</view>
-					<view class="contentItem" v-for="subCate in categoryObj.subCateList" :key="subCate.showIndex">
+					<view class="contentItem" v-for="subCate in categoryObj.subCateList" :key="subCate.wapBannerUrl">
 						<image :src="subCate.wapBannerUrl"></image>
 						<text>{{subCate.name}}</text>
 					</view>
